@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Interview Tanya Jawab</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Simulasi Sistem Interview Tanya Jawab</h1>
+            <p>Masukkan profil kandidat dan ajukan pertanyaan untuk mendapatkan jawaban berdasarkan konteks.</p>
+        </header>
+
+        <main>
+            <div class="form-group">
+                <label for="context">Konteks (Profil / CV Kandidat)</label>
+                <textarea id="context" placeholder="Masukkan profil atau CV kandidat di sini...&#10;Contoh: Budi adalah seorang Software Engineer dengan pengalaman 5 tahun di bidang web development menggunakan React dan Node.js. Ia lulus dari Universitas Indonesia jurusan Ilmu Komputer."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="question">Pertanyaan Interview</label>
+                <input type="text" id="question" placeholder="Contoh: Berapa lama pengalaman Budi di web development?">
+            </div>
+
+            <button id="submitBtn">
+                <span class="btn-text">Cari Jawaban</span>
+                <div class="spinner hidden"></div>
+            </button>
+
+            <div id="errorBanner" class="error-banner hidden">
+                Terjadi kesalahan. Silakan coba lagi.
+            </div>
+
+            <div id="resultContainer" class="result-container hidden">
+                <h3>Hasil Ekstraksi Jawaban</h3>
+                <div class="result-box">
+                    <div class="result-item">
+                        <span class="result-label">Jawaban:</span>
+                        <p id="answerText" class="result-value">-</p>
+                    </div>
+                    <div class="result-item score-container">
+                        <span class="result-label">Tingkat Keyakinan (Score):</span>
+                        <div class="progress-bar">
+                            <div id="scoreProgress" class="progress-fill"></div>
+                        </div>
+                        <span id="scoreText" class="score-value">0%</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
